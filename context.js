@@ -3,14 +3,20 @@ export default {
         {
             id: "summary",
             appName: "My Book",
+
             buttons: [
                 {
-                    icon: "fa-arrow-circle-down",
-                    text: "Section 1",
-                },
-                {
-                    icon: "fa-arrow-circle-down",
-                    text: "Section 2",
+                    label: "Sections",
+                    items: [
+                        {
+                            icon: "fas fa-arrow-circle-down",
+                            text: "Section 1",
+                        },
+                        {
+                            icon: "fas fa-arrow-circle-down",
+                            text: "Section 2",
+                        },
+                    ],
                 },
             ],
             title: "Summary",

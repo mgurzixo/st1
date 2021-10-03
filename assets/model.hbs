@@ -1,85 +1,67 @@
 {{#each pages}}
     <div id={{id}}>
         <nav
-            class="st-navbar has-background-grey-light"
+            class="st-navbar has-background-grey-light py-0 my-0"
             role="navigation"
             aria-label="main navigation"
         >
             <div class="navbar-brand">
 
                 {{#if appName}}
-                    <div class="navbar-item">
+                    <div class="navbar-item px-0">
                         <span class="icon icon-text">
                             <span class="icon">
                                 <i class="fas fa-home"></i>
                             </span>
                         </span>
-                        <span class="ml-2 is-size-5">{{appName}} </span>
+                        <span class="is-size-5 ml-2">
+                            {{appName}}
+                        </span>
                     </div>
                 {{/if}}
 
-                <div class="navbar-item">
-                    <div class="dropdown" id="toto">
-                        <div class="dropdown-trigger">
-                            <button
-                                class="button"
-                                aria-haspopup="true"
-                                aria-controls="dropdown-menu"
-                            >
-                                <span>Sections</span>
-                                <span class="icon is-small">
-                                    <i class="fas fa-angle-down" aria-hidden="true"></i>
-                                </span>
-                            </button>
-                        </div>
-                        <div class="dropdown-menu" id="dropdown-menu" role="menu">
-                            <div class="dropdown-content">
-                                <a href="#" class="dropdown-item">
-                                    Dropdown item
-                                </a>
-                                <a class="dropdown-item">
-                                    Other dropdown item
-                                </a>
-                                <a href="#" class="dropdown-item is-active">
-                                    Active dropdown item
-                                </a>
-                                <a href="#" class="dropdown-item">
-                                    Other dropdown item
-                                </a>
-                                <hr class="dropdown-divider" />
-                                <a href="#" class="dropdown-item">
-                                    With a divider
-                                </a>
-                                <a href="#" class="dropdown-item">
-                                    Dropdown item
-                                </a>
-                                <a class="dropdown-item">
-                                    Other dropdown item
-                                </a>
-                                <a href="#" class="dropdown-item is-active">
-                                    Active dropdown item
-                                </a>
-                                <a href="#" class="dropdown-item">
-                                    Other dropdown item
-                                </a>
-                                <hr class="dropdown-divider" />
-                                <a href="#" class="dropdown-item">
-                                    With a divider
-                                </a>
+                {{#each buttons}}
+                    <div class="navbar-item">
+                        <div class="dropdown">
+                            <div class="dropdown-trigger">
+                                <button
+                                    class="button px-2 is-small is-size-5"
+                                    aria-haspopup="true"
+                                    aria-controls="dropdown-menu"
+                                >
+                                    <span>Sections</span>
+                                    <span class="icon is-small">
+                                        <p class="fas fa-angle-down" aria-hidden="true"></p>
+                                    </span>
+                                </button>
+                            </div>
+                            <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                                <div class="dropdown-content">
+
+                                    {{#each items}}
+                                        <a class="navbar-item">
+                                            <div class="level is-mobile">
+                                                <div class="level-left">
+                                                    {{! <span class="icon level-item">
+                                                        <i class="fas fa-arrow-circle-down"></i>
+                                                    </span> }}
+                                                    <span
+                                                        class="level-item is-size-5"
+                                                    >{{text}}</span>
+
+                                                </div>
+                                                {{! <div class="level-right">
+                                                    <span class="level-item">Jobs</span>
+                                                </div> }}
+                                            </div>
+                                        </a>
+                                    {{/each}}
+                                </div>
                             </div>
                         </div>
                     </div>
-                    {{!-- <p class="buttons is-flex">
-                        {{#each buttons}}
-                            <button class="button is-small">
-                                <span class="icon">
-                                    <i class="fas fa-lg fa-arrow-circle-down"></i>
-                                </span>
-                                <span>{{text}}</span>
-                            </button>
-                        {{/each}}
-                    </p> --}}
-                </div>
+                {{/each}}
+
             </div>
         </nav>
         {{! This empty div MUST be the first element after st-navbar

@@ -22,7 +22,7 @@
 }
 
 .st-navbar {
-    min-height: 3.25rem;
+    // min-height: 3.25rem;
     width: 100%;
     z-index: 30;
 }
@@ -31,11 +31,9 @@
     box-shadow: 0 2px 0 0 #e5e5e5;
 }
 
-.stop-scrolling {
-    height: 100%;
-    overflow: hidden;
+.level {
+    width: 100%;
 }
-
-.dropdown-content {
-    overflow: scroll;
+.navbar-brand a.navbar-item:hover {
+    background-color: hsla(0, 0%, 90%, 1);
 }

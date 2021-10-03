@@ -1,5 +1,4 @@
 import "./style.scss";
-import main from "./assets/index.html?raw";
 import model from "./assets/model.hbs?raw";
 import context from "./context";
 import Handlebars from "handlebars";
