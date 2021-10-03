@@ -1,0 +1,14 @@
+{
+    "name": "st1",
+    "version": "0.0.0",
+    "scripts": {
+        "dev": "vite --host",
+        "build": "vite build",
+        "serve": "vite preview --host"
+    },
+    "devDependencies": {
+        "handlebars": "^4.7.7",
+        "sass": "^1.42.1",
+        "vite": "^2.6.0"
+    }
+}

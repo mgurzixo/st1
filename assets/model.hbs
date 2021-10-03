@@ -1,0 +1,129 @@
+{{#each pages}}
+    <div id={{id}}>
+        <nav
+            class="st-navbar has-background-grey-light"
+            role="navigation"
+            aria-label="main navigation"
+        >
+            <div class="navbar-brand">
+
+                {{#if appName}}
+                    <div class="navbar-item">
+                        <span class="icon icon-text">
+                            <span class="icon">
+                                <i class="fas fa-home"></i>
+                            </span>
+                        </span>
+                        <span class="ml-2 is-size-5">{{appName}} </span>
+                    </div>
+                {{/if}}
+
+                <div class="navbar-item">
+                    <div class="dropdown" id="toto">
+                        <div class="dropdown-trigger">
+                            <button
+                                class="button"
+                                aria-haspopup="true"
+                                aria-controls="dropdown-menu"
+                            >
+                                <span>Sections</span>
+                                <span class="icon is-small">
+                                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                </span>
+                            </button>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                            <div class="dropdown-content">
+                                <a href="#" class="dropdown-item">
+                                    Dropdown item
+                                </a>
+                                <a class="dropdown-item">
+                                    Other dropdown item
+                                </a>
+                                <a href="#" class="dropdown-item is-active">
+                                    Active dropdown item
+                                </a>
+                                <a href="#" class="dropdown-item">
+                                    Other dropdown item
+                                </a>
+                                <hr class="dropdown-divider" />
+                                <a href="#" class="dropdown-item">
+                                    With a divider
+                                </a>
+                                <a href="#" class="dropdown-item">
+                                    Dropdown item
+                                </a>
+                                <a class="dropdown-item">
+                                    Other dropdown item
+                                </a>
+                                <a href="#" class="dropdown-item is-active">
+                                    Active dropdown item
+                                </a>
+                                <a href="#" class="dropdown-item">
+                                    Other dropdown item
+                                </a>
+                                <hr class="dropdown-divider" />
+                                <a href="#" class="dropdown-item">
+                                    With a divider
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    {{!-- <p class="buttons is-flex">
+                        {{#each buttons}}
+                            <button class="button is-small">
+                                <span class="icon">
+                                    <i class="fas fa-lg fa-arrow-circle-down"></i>
+                                </span>
+                                <span>{{text}}</span>
+                            </button>
+                        {{/each}}
+                    </p> --}}
+                </div>
+            </div>
+        </nav>
+        {{! This empty div MUST be the first element after st-navbar
+         for autohide to work. }}
+        <div class="">
+            <div class="section">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-header-title xis-pulled-right is-size-5">{{section}}</div>
+                        <div class="card-header-title is-size-3">{{title}}</div>
+                    </div>
+                    <div class="card-content is-clearfix">
+                        <p>
+                            <img
+                                src="assets/pineapple.jpg"
+                                alt="Pineapple"
+                                style="width: 170px; height: 170px; margin-right: 15px; float: left"
+                            />
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                            commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+                            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+                            occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                            mollit anim id est laborum.
+                        </p>
+                        <div class="m-4"></div>
+                        <p>
+                            <img
+                                src="assets/pineapple.jpg"
+                                alt="Pineapple"
+                                style="width: 170px; height: 170px; margin-right: 15px; float: right"
+                            />
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                            commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+                            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+                            occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                            mollit anim id est laborum.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{{/each}}
