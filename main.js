@@ -5,16 +5,6 @@ import Handlebars from "handlebars";
 import initAutoHide from "./lib/AutoHide";
 import { initBulmaDropdowns } from "./lib/BulmaDropdowns";
 
-// function toggleDropdown(el, event) {
-//     console.log(`[toggleDropdown] got event ${event}`);
-//     console.log(`[toggleDropdown] got event from ${el.id}`);
-//     event = event || window.event;
-//     event.stopPropagation();
-//     el.classList.toggle("is-active");
-// }
-// // Expose handler
-// window.toggleDropdown = toggleDropdown;
-
 let template = Handlebars.compile(model);
 let html = template(context);
 document.querySelector("#app").innerHTML = `${html}`;

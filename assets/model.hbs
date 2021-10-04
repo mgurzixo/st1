@@ -6,68 +6,97 @@
             aria-label="main navigation"
         >
             <div class="navbar-brand">
+                <div class="navbar-item px-0">
+                    <div class="buttons">
+                        <div class="mx-1"></div>
 
-                {{#if appName}}
-                    <div class="navbar-item px-0">
-                        <span class="icon icon-text">
-                            <span class="icon">
-                                <i class="fas fa-home"></i>
-                            </span>
-                        </span>
-                        <span class="is-size-5 ml-2">
-                            {{appName}}
-                        </span>
-                    </div>
-                {{/if}}
-
-                {{#each buttons}}
-                    <div class="navbar-item">
-                        <div class="dropdown">
-                            <div class="dropdown-trigger">
-                                <button
-                                    class="button px-2 is-small is-size-5"
-                                    aria-haspopup="true"
-                                    aria-controls="dropdown-menu"
-                                >
-                                    <span>Sections</span>
-                                    <span class="icon is-small">
-                                        <p class="fas fa-angle-down" aria-hidden="true"></p>
+                        {{#if burger}}
+                            <div
+                                class="button is-light is-static has-background-grey-light is-rounded"
+                            >
+                                <span class="icon">
+                                    <i class="{{burger.icon}}"></i>
+                                </span>
+                                {{#if burger.label}}
+                                    <span class="is-size-5">
+                                        {{burger.label}}
                                     </span>
-                                </button>
+                                {{/if}}
                             </div>
-                            <div class="dropdown-menu" id="dropdown-menu" role="menu">
-                                <div class="dropdown-content">
+                        {{/if}}
 
-                                    {{#each items}}
-                                        <a class="navbar-item">
-                                            <div class="level is-mobile">
-                                                <div class="level-left">
-                                                    {{! <span class="icon level-item">
-                                                        <i class="fas fa-arrow-circle-down"></i>
-                                                    </span> }}
-                                                    <span
-                                                        class="level-item is-size-5"
-                                                    >{{text}}</span>
+                        {{#if up}}
+                            <div class="button">
+                                <span class="icon">
+                                    <i class="{{up.icon}}"></i>
+                                </span>
+                                <span class="is-size-5 ml-2">
+                                    {{up.label}}
+                                </span>
+                            </div>
+                        {{/if}}
 
-                                                </div>
-                                                {{! <div class="level-right">
-                                                    <span class="level-item">Jobs</span>
-                                                </div> }}
+                        {{#each buttons}}
+                            <div class="dropdown">
+                                <div class="dropdown-trigger">
+                                    <div>
+                                        <div class="button is-rounded">
+                                            <span class="is-size-5">
+                                                {{label}}</span>
+                                            <span class="icon is-small">
+                                                <i class="fas fa-angle-down"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="dropdown-menu min-width-10"
+                                    id="dropdown-menu"
+                                    role="menu"
+                                >
+                                    <div class="dropdown-content">
+                                        {{#each items}}
+                                            <div class="dropdown-item">
+                                                <span class="icon">
+                                                    <i class="fa-lg {{icon}}"></i>
+                                                </span>
+                                                <span class="is-size-5 ml-2">
+                                                    {{label}}</span>
+
                                             </div>
-                                        </a>
-                                    {{/each}}
+                                        {{/each}}
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        {{/each}}
                     </div>
-                {{/each}}
+                </div>
 
+                <div class="navbar-item grow-99">
+                    <div class="field">
+                        <p class="control has-icons-left">
+                            <input class="input is-rounded" type="password" placeholder="Search" />
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-search"></i>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="navbar-item">
+                    <div class="button px-0 has-background-grey-light">
+                        <span class="icon">
+                            <i class="fa fa-ellipsis-v"></i>
+                        </span>
+
+                    </div>
+                </div>
             </div>
         </nav>
         {{! This empty div MUST be the first element after st-navbar
          for autohide to work. }}
-        <div class="">
-            <div class="section">
+        <div>
+            <div class="container">
                 <div class="card">
                     <div class="card-header">
                         <div class="card-header-title xis-pulled-right is-size-5">{{section}}</div>

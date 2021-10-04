@@ -2,7 +2,14 @@ export default {
     pages: [
         {
             id: "summary",
-            appName: "My Book",
+            burger: {
+                label: "",
+                icon: "fas fa-home",
+            },
+            Xup: {
+                label: "Sections",
+                icon: "fas fa-arrow-circle-up",
+            },
 
             buttons: [
                 {
@@ -10,17 +17,18 @@ export default {
                     items: [
                         {
                             icon: "fas fa-arrow-circle-down",
-                            text: "Section 1",
+                            label: "Section 1",
                         },
                         {
                             icon: "fas fa-arrow-circle-down",
-                            text: "Section 2",
+                            label: "Section 2",
                         },
                     ],
                 },
             ],
             title: "Summary",
         },
+
         // {
         //     id: "s1c1",
         //     appName: "Section 1",
