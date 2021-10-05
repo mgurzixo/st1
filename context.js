@@ -1,5 +1,6 @@
 export default {
     summary: {
+        title: "Summary",
         burger: {
             label: "",
             icon: "fas fa-lg fa-home",
@@ -28,11 +29,12 @@ export default {
     },
 
     section1: {
+        title: "Section 1",
         burger: {
             label: "",
             icon: "fas fa-lg fa-home",
         },
-        Xup: {
+        Yup: {
             label: "Sections",
             icon: "fas fa-arrow-circle-up",
         },
@@ -52,7 +54,6 @@ export default {
                 ],
             },
         ],
-        title: "Summary",
     },
 
     // {

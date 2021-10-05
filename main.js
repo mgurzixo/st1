@@ -8,13 +8,18 @@ import { initBulmaDropdowns } from "./lib/BulmaDropdowns";
 
 let template = Handlebars.compile(model);
 
-function displayPage(id) {
+function instanciatePage(id) {
     let html = template(context[id]);
-    console.log(`[displayPage] html[${id}]=${html}`);
     document.querySelector("#app").innerHTML = html;
     initImages();
     initAutoHide();
     initBulmaDropdowns();
 }
 
-displayPage("summary");
+function stLink(id) {
+    instanciatePage(id);
+}
+
+window.stLink = stLink;
+
+stLink("section1");
