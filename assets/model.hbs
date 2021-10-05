@@ -1,162 +1,154 @@
-{{#each pages}}
-    <div id={{id}}>
-        <nav
-            class="st-navbar has-background-grey-light py-0 my-0"
-            role="navigation"
-            aria-label="main navigation"
-        >
-            <div class="navbar-brand is-size-7">
-                <div class="navbar-item px-0">
-                    <div class="buttons">
+<div id={{id}}>
+    <nav
+        class="st-navbar has-background-grey-light py-0 my-0"
+        role="navigation"
+        aria-label="main navigation"
+    >
+        <div class="navbar-brand is-size-7">
+            <div class="navbar-item px-0">
+                <div class="buttons">
 
-                        {{#if burger}}
-                            <div
-                                class="button is-light is-static has-background-grey-light no-border is-small"
-                            >
-                                <span class="icon">
-                                    <i class="{{burger.icon}}"></i>
+                    {{#if burger}}
+                        <div
+                            class="button is-light is-static has-background-grey-light no-border is-small"
+                        >
+                            <span class="icon">
+                                <i class="{{burger.icon}}"></i>
+                            </span>
+                            {{#if burger.label}}
+                                <span class="is-size-6">
+                                    {{burger.label}}
                                 </span>
-                                {{#if burger.label}}
-                                    <span class="is-size-6">
-                                        {{burger.label}}
-                                    </span>
-                                {{/if}}
+                            {{/if}}
+                        </div>
+                    {{/if}}
+
+                    {{#if up}}
+                        <div class="button is-small">
+                            <span class="icon">
+                                <i class="{{up.icon}}"></i>
+                            </span>
+                            <span class="is-size-6 ml-2">
+                                {{up.label}}
+                            </span>
+                        </div>
+                    {{/if}}
+
+                    {{#each buttons}}
+                        <div class="dropdown mr-1">
+                            <div class="dropdown-trigger">
+                                <div>
+                                    <div class="button is-rounded-1">
+                                        <span class="is-size-6">
+                                            {{label}}</span>
+                                        <span class="icon is-small">
+                                            <i class="fas fa-angle-down"></i>
+                                        </span>
+                                    </div>
+                                </div>
                             </div>
-                        {{/if}}
-
-                        {{#if up}}
-                            <div class="button is-small">
-                                <span class="icon">
-                                    <i class="{{up.icon}}"></i>
-                                </span>
-                                <span class="is-size-6 ml-2">
-                                    {{up.label}}
-                                </span>
-                            </div>
-                        {{/if}}
-
-                        {{#each buttons}}
-                            <div class="dropdown mr-1">
-                                <div class="dropdown-trigger">
-                                    <div>
-                                        <div class="button is-rounded-1">
-                                            <span class="is-size-6">
-                                                {{label}}</span>
-                                            <span class="icon is-small">
-                                                <i class="fas fa-angle-down"></i>
+                            <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                                <div class="dropdown-content is-rounded-1">
+                                    {{#each items}}
+                                        <div class="dropdown-item is-flex">
+                                            <span class="icon pt-1 has-text-grey-light">
+                                                <i class="fa-lg {{icon}}"></i>
                                             </span>
+                                            <span class="is-size-6 ml-1">
+                                                {{label}}</span>
+
                                         </div>
-                                    </div>
-                                </div>
-                                <div class="dropdown-menu" id="dropdown-menu" role="menu">
-                                    <div class="dropdown-content is-rounded-1">
-                                        {{#each items}}
-                                            <div class="dropdown-item is-flex">
-                                                <span class="icon pt-1 has-text-grey-light">
-                                                    <i class="fa-lg {{icon}}"></i>
-                                                </span>
-                                                <span class="is-size-6 ml-1">
-                                                    {{label}}</span>
-
-                                            </div>
-                                        {{/each}}
-                                    </div>
-                                </div>
-                            </div>
-                        {{/each}}
-                    </div>
-                </div>
-                <div class="flex-spacer"></div>
-                <div class="navbar-item navbar-search mr-1">
-                    <p class="control has-icons-left">
-                        <input
-                            class="input is-rounded is-size-6"
-                            type="text"
-                            placeholder="Search"
-                        />
-                        <span class="icon is-small is-left">
-                            <i class="fas fa-search"></i>
-                        </span>
-                    </p>
-                </div>
-
-                <div class="navbar-item mx-2 px-2">
-                    <div class="dropdown is-right">
-                        <div class="dropdown-trigger">
-                            <div>
-                                <div
-                                    class="button no-border px-0 mr-1 has-background-grey-light is-small"
-                                >
-                                    <span class="icon">
-                                        <i class="fa fa-lg fa-ellipsis-v"></i>
-                                    </span>
+                                    {{/each}}
                                 </div>
                             </div>
                         </div>
-                        <div class="dropdown-menu is-10rem" id="dropdown-menu" role="menu">
-                            <div class="dropdown-content is-rounded-1 is-right is-active">
-                                <div class="dropdown-item is-flex">
-                                    <span class="icon pt-1 has-text-grey-light">
-                                        <i class="fa-lg fa fa-cog"></i>
-                                    </span>
-                                    <span class="is-size-6 ml-1">
-                                        Settings</span>
-                                </div>
-                                <div class="dropdown-item is-flex">
-                                    <span class="icon pt-1 has-text-grey-light">
-                                        <i class="fa-lg fa fa-heart"></i>
-                                    </span>
-                                    <span class="is-size-6 ml-1">
-                                        About</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    {{/each}}
                 </div>
             </div>
-        </nav>
-        {{! This empty div MUST be the first element after st-navbar
-         for autohide to work. }}
-        <div>
-            <div class="container">
-                <div class="card">
-                    <div class="card-header">
-                        <div class="card-header-title xis-pulled-right is-size-5">{{section}}</div>
-                        <div class="card-header-title is-size-3">{{title}}</div>
+            <div class="flex-spacer"></div>
+            <div class="navbar-item navbar-search mr-1">
+                <p class="control has-icons-left">
+                    <input class="input is-rounded is-size-6" type="text" placeholder="Search" />
+                    <span class="icon is-small is-left">
+                        <i class="fas fa-search"></i>
+                    </span>
+                </p>
+            </div>
+
+            <div class="navbar-item mx-2 px-2">
+                <div class="dropdown is-right">
+                    <div class="dropdown-trigger">
+                        <div>
+                            <div
+                                class="button no-border px-0 mr-1 has-background-grey-light is-small"
+                            >
+                                <span class="icon">
+                                    <i class="fa fa-lg fa-ellipsis-v"></i>
+                                </span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="card-content is-clearfix">
-                        <p>
-                            <img
-                                class="pineapple"
-                                alt="Pineapple"
-                                style="width: 170px; height: 170px; margin-right: 15px; float: left"
-                            />
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                            commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-                            occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-                            mollit anim id est laborum.
-                        </p>
-                        <div class="m-4"></div>
-                        <p>
-                            <img
-                                class="pineapple"
-                                alt="Pineapple"
-                                style="width: 170px; height: 170px; margin-right: 15px; float: right"
-                            />
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                            commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-                            occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-                            mollit anim id est laborum.
-                        </p>
+                    <div class="dropdown-menu is-10rem" id="dropdown-menu" role="menu">
+                        <div class="dropdown-content is-rounded-1 is-right is-active">
+                            <div class="dropdown-item is-flex">
+                                <span class="icon pt-1 has-text-grey-light">
+                                    <i class="fa-lg fa fa-cog"></i>
+                                </span>
+                                <span class="is-size-6 ml-1">
+                                    Settings</span>
+                            </div>
+                            <div class="dropdown-item is-flex">
+                                <span class="icon pt-1 has-text-grey-light">
+                                    <i class="fa-lg fa fa-heart"></i>
+                                </span>
+                                <span class="is-size-6 ml-1">
+                                    About</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+    </nav>
+    {{! This empty div MUST be the first element after st-navbar
+         for autohide to work. }}
+    <div>
+        <div class="container">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-header-title xis-pulled-right is-size-5">{{section}}</div>
+                    <div class="card-header-title is-size-3">{{title}}</div>
+                </div>
+                <div class="card-content is-clearfix">
+                    <p>
+                        <img
+                            class="pineapple"
+                            alt="Pineapple"
+                            style="width: 170px; height: 170px; margin-right: 15px; float: left"
+                        />
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                    <div class="m-4"></div>
+                    <p>
+                        <img
+                            class="pineapple"
+                            alt="Pineapple"
+                            style="width: 170px; height: 170px; margin-right: 15px; float: right"
+                        />
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
-{{/each}}
+</div>

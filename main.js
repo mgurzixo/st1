@@ -7,8 +7,14 @@ import initImages from "./lib/InitImages";
 import { initBulmaDropdowns } from "./lib/BulmaDropdowns";
 
 let template = Handlebars.compile(model);
-let html = template(context);
-document.querySelector("#app").innerHTML = `${html}`;
-initImages();
-initAutoHide();
-initBulmaDropdowns();
+
+function displayPage(id) {
+    let html = template(context[id]);
+    console.log(`[displayPage] html[${id}]=${html}`);
+    document.querySelector("#app").innerHTML = html;
+    initImages();
+    initAutoHide();
+    initBulmaDropdowns();
+}
+
+displayPage("summary");
