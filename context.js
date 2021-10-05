@@ -4,7 +4,7 @@ export default {
             id: "summary",
             burger: {
                 label: "",
-                icon: "fas fa-home",
+                icon: "fas fa-lg fa-home",
             },
             Xup: {
                 label: "Sections",

@@ -5,20 +5,19 @@
             role="navigation"
             aria-label="main navigation"
         >
-            <div class="navbar-brand">
+            <div class="navbar-brand is-size-7">
                 <div class="navbar-item px-0">
                     <div class="buttons">
-                        <div class="mx-1"></div>
 
                         {{#if burger}}
                             <div
-                                class="button is-light is-static has-background-grey-light is-rounded"
+                                class="button is-light is-static has-background-grey-light no-border is-small"
                             >
                                 <span class="icon">
                                     <i class="{{burger.icon}}"></i>
                                 </span>
                                 {{#if burger.label}}
-                                    <span class="is-size-5">
+                                    <span class="is-size-6">
                                         {{burger.label}}
                                     </span>
                                 {{/if}}
@@ -26,22 +25,22 @@
                         {{/if}}
 
                         {{#if up}}
-                            <div class="button">
+                            <div class="button is-small">
                                 <span class="icon">
                                     <i class="{{up.icon}}"></i>
                                 </span>
-                                <span class="is-size-5 ml-2">
+                                <span class="is-size-6 ml-2">
                                     {{up.label}}
                                 </span>
                             </div>
                         {{/if}}
 
                         {{#each buttons}}
-                            <div class="dropdown">
+                            <div class="dropdown mr-1">
                                 <div class="dropdown-trigger">
                                     <div>
-                                        <div class="button is-rounded">
-                                            <span class="is-size-5">
+                                        <div class="button is-rounded-1">
+                                            <span class="is-size-6">
                                                 {{label}}</span>
                                             <span class="icon is-small">
                                                 <i class="fas fa-angle-down"></i>
@@ -49,18 +48,14 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div
-                                    class="dropdown-menu min-width-10"
-                                    id="dropdown-menu"
-                                    role="menu"
-                                >
-                                    <div class="dropdown-content">
+                                <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                                    <div class="dropdown-content is-rounded-1">
                                         {{#each items}}
-                                            <div class="dropdown-item">
-                                                <span class="icon">
+                                            <div class="dropdown-item is-flex">
+                                                <span class="icon pt-1 has-text-grey-light">
                                                     <i class="fa-lg {{icon}}"></i>
                                                 </span>
-                                                <span class="is-size-5 ml-2">
+                                                <span class="is-size-6 ml-1">
                                                     {{label}}</span>
 
                                             </div>
@@ -71,24 +66,51 @@
                         {{/each}}
                     </div>
                 </div>
-
-                <div class="navbar-item grow-99">
-                    <div class="field">
-                        <p class="control has-icons-left">
-                            <input class="input is-rounded" type="password" placeholder="Search" />
-                            <span class="icon is-small is-left">
-                                <i class="fas fa-search"></i>
-                            </span>
-                        </p>
-                    </div>
+                <div class="flex-spacer"></div>
+                <div class="navbar-item navbar-search mr-1">
+                    <p class="control has-icons-left">
+                        <input
+                            class="input is-rounded is-size-6"
+                            type="text"
+                            placeholder="Search"
+                        />
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-search"></i>
+                        </span>
+                    </p>
                 </div>
 
-                <div class="navbar-item">
-                    <div class="button px-0 has-background-grey-light">
-                        <span class="icon">
-                            <i class="fa fa-ellipsis-v"></i>
-                        </span>
-
+                <div class="navbar-item mx-2 px-2">
+                    <div class="dropdown is-right">
+                        <div class="dropdown-trigger">
+                            <div>
+                                <div
+                                    class="button no-border px-0 mr-1 has-background-grey-light is-small"
+                                >
+                                    <span class="icon">
+                                        <i class="fa fa-lg fa-ellipsis-v"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown-menu is-10rem" id="dropdown-menu" role="menu">
+                            <div class="dropdown-content is-rounded-1 is-right is-active">
+                                <div class="dropdown-item is-flex">
+                                    <span class="icon pt-1 has-text-grey-light">
+                                        <i class="fa-lg fa fa-cog"></i>
+                                    </span>
+                                    <span class="is-size-6 ml-1">
+                                        Settings</span>
+                                </div>
+                                <div class="dropdown-item is-flex">
+                                    <span class="icon pt-1 has-text-grey-light">
+                                        <i class="fa-lg fa fa-heart"></i>
+                                    </span>
+                                    <span class="is-size-6 ml-1">
+                                        About</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -105,7 +127,7 @@
                     <div class="card-content is-clearfix">
                         <p>
                             <img
-                                src="assets/pineapple.jpg"
+                                class="pineapple"
                                 alt="Pineapple"
                                 style="width: 170px; height: 170px; margin-right: 15px; float: left"
                             />
@@ -120,7 +142,7 @@
                         <div class="m-4"></div>
                         <p>
                             <img
-                                src="assets/pineapple.jpg"
+                                class="pineapple"
                                 alt="Pineapple"
                                 style="width: 170px; height: 170px; margin-right: 15px; float: right"
                             />

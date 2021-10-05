@@ -1,10 +1,8 @@
 #app {
     text-align: center;
 }
-.no-display {
-    display: none;
-}
 
+// Autohide navbar
 #page-container {
     position: relative;
     min-height: 100vh;
@@ -29,33 +27,62 @@
     box-shadow: 0 2px 0 0 #e5e5e5;
 }
 
-.level {
-    width: 100%;
+.navbar-item {
+    padding: 1px !important;
+}
+
+// cf. https://github.com/jgthms/bulma/issues/1790
+.dropdown .dropdown-menu {
+    display: block;
+    opacity: 0;
+
+    position: absolute; /* or float: left; width: 100%;*/
+    left: 0;
+    right: 0;
+
+    transform: translateY(-50%);
+    transition: all 0.15s ease-in-out;
+    pointer-events: none;
+}
+
+.dropdown.is-active .dropdown-menu {
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+}
+
+// Bulma Dropdowns style
+.dropdown-menu.is-10rem {
+    min-width: 10em;
 }
 
 .dropdown-item:hover {
-    background-color: rgb(217, 224, 228);
+    background-color: rgb(212, 225, 233);
 }
 
 .dropdown-content {
     background-color: hsla(0, 0%, 95%, 1);
-    border-width: 2px;
+    border-width: 1px;
     border-color: hsla(0, 0%, 85%, 1);
     border-style: solid;
+    box-shadow: 0 2px 0 0 #f0f0f0;
 }
 
-.box-sizing-inherit {
-    box-sizing: inherit;
+.navbar-search {
+    flex: 10 1 50vh;
+    min-width: 5em;
+    max-width: 20em;
 }
 
-.min-width-10 {
-    min-width: 10em !important;
+.flex-spacer {
+    flex: 1 1;
 }
 
-.flex-grow-99 {
-    flex-grow: 99;
+.no-border {
+    border-width: 0px;
 }
 
-.grow-99 {
-    flex: 99 1 50vh;
+// Dropdowns style
+.button.is-rounded-1:not(.is-rounded) {
+    border-radius: 0.8em;
 }
