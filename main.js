@@ -14,6 +14,7 @@ function instanciatePage(id) {
     makeRandomPage();
     initAutoHide();
     initBulmaDropdowns();
+    window.scroll({ top: 0, left: 0, behavior: "instant" });
 }
 
 function stLink(id) {
