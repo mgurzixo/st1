@@ -10,5 +10,9 @@
         "handlebars": "^4.7.7",
         "sass": "^1.42.1",
         "vite": "^2.6.0"
+    },
+    "dependencies": {
+        "lorem-ipsum": "^2.0.4",
+        "picsum-photos": "^3.0.7"
     }
 }

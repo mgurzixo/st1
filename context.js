@@ -17,10 +17,12 @@ export default {
                     {
                         icon: "fas fa-arrow-circle-down",
                         label: "Section 1",
+                        onclick: "stLink('section1')",
                     },
                     {
                         icon: "fas fa-arrow-circle-down",
                         label: "Section 2",
+                        onclick: "stLink('section2')",
                     },
                 ],
             },
@@ -31,8 +33,9 @@ export default {
     section1: {
         title: "Section 1",
         burger: {
-            label: "",
-            icon: "fas fa-lg fa-home",
+            label: "Sections",
+            icon: "fas fa-lg fa-arrow-circle-up",
+            onclick: "stLink('summary')",
         },
         Yup: {
             label: "Sections",
@@ -41,7 +44,7 @@ export default {
 
         buttons: [
             {
-                label: "Sections",
+                label: "Chapters",
                 items: [
                     {
                         icon: "fas fa-arrow-circle-down",

@@ -3,7 +3,7 @@ import model from "./assets/model.hbs?raw";
 import context from "./context";
 import Handlebars from "handlebars";
 import initAutoHide from "./lib/AutoHide";
-import initImages from "./lib/InitImages";
+import makeRandomPage from "./lib/MakeRandomPage";
 import { initBulmaDropdowns } from "./lib/BulmaDropdowns";
 
 let template = Handlebars.compile(model);
@@ -11,7 +11,7 @@ let template = Handlebars.compile(model);
 function instanciatePage(id) {
     let html = template(context[id]);
     document.querySelector("#app").innerHTML = html;
-    initImages();
+    makeRandomPage();
     initAutoHide();
     initBulmaDropdowns();
 }
@@ -22,4 +22,4 @@ function stLink(id) {
 
 window.stLink = stLink;
 
-stLink("section1");
+stLink("summary");
