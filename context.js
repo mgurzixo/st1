@@ -3,11 +3,12 @@ export default {
         title: "Summary",
         burger: {
             label: "",
-            icon: "fas fa-lg fa-home",
+            icon: "fas fa-2x fa-home",
         },
-        Xup: {
-            label: "Sections",
-            icon: "fas fa-arrow-circle-up",
+        up: {
+            label: "SectionA",
+            icon: "fas fa-2x fa-arrow-down",
+            onclick: "stLink('section1', 'down')",
         },
 
         buttons: [
@@ -15,14 +16,14 @@ export default {
                 label: "Sections",
                 items: [
                     {
-                        icon: "fas fa-arrow-circle-down",
+                        icon: "fas fa-2x fa-arrow-down",
                         label: "Section 1",
-                        onclick: "stLink('section1')",
+                        onclick: "stLink('section1', 'down')",
                     },
                     {
-                        icon: "fas fa-arrow-circle-down",
+                        icon: "fas fa-2x fa-arrow-down",
                         label: "Section 2",
-                        onclick: "stLink('section2')",
+                        onclick: "stLink('section2', 'down')",
                     },
                 ],
             },
@@ -34,12 +35,12 @@ export default {
         title: "Section 1",
         burger: {
             label: "Sections",
-            icon: "fas fa-lg fa-arrow-circle-up",
-            onclick: "stLink('summary')",
+            icon: "fas fa-2x fa-arrow-up",
+            onclick: "stLink('summary', 'up')",
         },
         Yup: {
             label: "Sections",
-            icon: "fas fa-arrow-circle-up",
+            icon: "fas fa-2x fa-arrow-up",
         },
 
         buttons: [
@@ -47,11 +48,11 @@ export default {
                 label: "Chapters",
                 items: [
                     {
-                        icon: "fas fa-arrow-circle-down",
+                        icon: "fas fa-2x fa-arrow-down",
                         label: "Section 1",
                     },
                     {
-                        icon: "fas fa-arrow-circle-down",
+                        icon: "fas fa-2x fa-arrow-down",
                         label: "Section 2",
                     },
                 ],

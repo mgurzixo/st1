@@ -1,6 +1,8 @@
-<div>
-    <nav
+<div id="page-container">
+    <div id="content-wrap">
+        <nav
         class="st-navbar has-background-grey-light py-0 my-0"
+        id="myNavbar"
         role="navigation"
         aria-label="main navigation"
     >
@@ -15,18 +17,17 @@
                             {{else}}
                                 is-static
                             {{/if}}
-                            has-background-grey-light no-border is-small"
+                            has-background-grey-light no-border is-small ml-2"
 
-                                        {{#if burger.onclick}}
-                                        onclick="{{burger.onclick}}"
-                                        {{/if}}
-
+                            {{#if burger.onclick}}
+                                onclick="{{burger.onclick}}"
+                            {{/if}}
                         >
                             <span class="icon">
                                 <i class="{{burger.icon}}"></i>
                             </span>
                             {{#if burger.label}}
-                                <span class="is-size-6">
+                                <span class="is-size-6 ml-2">
                                     {{burger.label}}
                                 </span>
                             {{/if}}
@@ -34,7 +35,11 @@
                     {{/if}}
 
                     {{#if up}}
-                        <div class="button is-small">
+                        <div class="button is-rounded-1"
+                            {{#if up.onclick}}
+                                onclick="{{up.onclick}}"
+                            {{/if}}
+                        >
                             <span class="icon">
                                 <i class="{{up.icon}}"></i>
                             </span>
@@ -61,16 +66,14 @@
                                 <div class="dropdown-content is-rounded-1">
                                     {{#each items}}
                                         <div class="dropdown-item is-flex" 
-                                        
                                         {{#if onclick}}
                                         onclick="{{onclick}}"
                                         {{/if}}
-                                        
                                         >
-                                            <span class="icon pt-1 has-text-grey-light">
+                                            <span class="icon has-text-grey-light">
                                                 <i class="fa-lg {{icon}}"></i>
                                             </span>
-                                            <span class="is-size-6 ml-1">
+                                            <span class="is-size-6 ml-2">
                                                 {{label}}</span>
 
                                         </div>
@@ -107,14 +110,14 @@
                     <div class="dropdown-menu is-10rem" id="dropdown-menu" role="menu">
                         <div class="dropdown-content is-rounded-1 is-right is-active">
                             <div class="dropdown-item is-flex">
-                                <span class="icon pt-1 has-text-grey-light">
+                                <span class="icon has-text-grey-light">
                                     <i class="fa-lg fa fa-cog"></i>
                                 </span>
                                 <span class="is-size-6 ml-1">
                                     Settings</span>
                             </div>
                             <div class="dropdown-item is-flex">
-                                <span class="icon pt-1 has-text-grey-light">
+                                <span class="icon has-text-grey-light">
                                     <i class="fa-lg fa fa-heart"></i>
                                 </span>
                                 <span class="is-size-6 ml-1">
@@ -125,10 +128,10 @@
                 </div>
             </div>
         </div>
-    </nav>
-    {{! This empty div MUST be the first element after st-navbar
-         for autohide to work. }}
-    <div>
+        </nav>
+        {{! This empty div MUST be the first element after st-navbar
+            for autohide to work. }}
+        <div>
         <div class="container">
             <div class="card">
                 <div class="card-header">
@@ -139,5 +142,34 @@
                 </div>
             </div>
         </div>
+
+
+
+
+        </div>
+    </div>
+    <footer id="footer" class="mt-3 p-4 is-size-7 has-background-grey-lighter has-shadow">
+        <div class="content">
+            <p>
+                <strong>Smooth transitions</strong> by
+                <a href="https://none.com">XXXX Mgurzixo</a>.
+                <br />
+                The source code is available at
+                <a href="http://opensource.org/licenses/mit-license.php" target="_blank"
+                    >XXXX Github</a
+                >
+                under the
+                <a href="http://opensource.org/licenses/mit-license.php" target="_blank"
+                    >MIT</a
+                        >
+                licence.
+                <br />
+                The website content is licensed
+                <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">
+                    CC BY NC SA 4.0
+                </a>.
+            </p>
+        </div>
+    </footer>
     </div>
 </div>
