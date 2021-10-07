@@ -10,43 +10,59 @@ id="{{id}}"
         >
             <div class="navbar-brand is-size-7">
                 <div class="navbar-item px-0">
-                <div class="buttons">
+                    <div class="buttons">
 
                     {{#if burger}}
                         <div
-                            class="button is-light 
-                            {{#if burger.onclick}}
-                            {{else}}
-                                is-static
-                            {{/if}}
-                            has-background-grey-light no-border is-small ml-2"
-
-                            {{#if burger.onclick}}
-                                onclick="{{burger.onclick}}"
-                            {{/if}}
+                        class="button is-light 
+                        {{#if burger.onclick}}
+                        {{else}}
+                            is-static
+                        {{/if}}
+                        has-background-grey-light no-border is-small ml-2"
+                        {{#if burger.onclick}}
+                            onclick="{{burger.onclick}}"
+                        {{/if}}
                         >
                             <span class="icon ">
                                 <i class="{{burger.icon}}"></i>
                             </span>
+
                             {{#if burger.label}}
                                 <span class="is-size-6 ml-2">
                                     {{burger.label}}
                                 </span>
                             {{/if}}
+                            
                         </div>
                     {{/if}}
 
-                    {{#if up}}
+                    {{#if previous}}
                         <div class="button is-rounded-1"
-                            {{#if up.onclick}}
-                                onclick="{{up.onclick}}"
+                            {{#if previous.onclick}}
+                                onclick="{{previous.onclick}}"
                             {{/if}}
                         >
                             <span class="icon has-text-grey-light">
-                                <i class="{{up.icon}}"></i>
+                                <i class="{{previous.icon}}"></i>
                             </span>
                             <span class="is-size-6 ml-2">
-                                {{up.label}}
+                                {{previous.label}}
+                            </span>
+                        </div>
+                    {{/if}}
+
+                    {{#if next}}
+                        <div class="button is-rounded-1"
+                            {{#if next.onclick}}
+                                onclick="{{next.onclick}}"
+                            {{/if}}
+                        >
+                            <span class="icon has-text-grey-light">
+                                <i class="{{next.icon}}"></i>
+                            </span>
+                            <span class="is-size-6 ml-2">
+                                {{next.label}}
                             </span>
                         </div>
                     {{/if}}
@@ -67,7 +83,12 @@ id="{{id}}"
                             <div class="dropdown-menu" id="dropdown-menu" role="menu">
                                 <div class="dropdown-content is-rounded-1">
                                     {{#each items}}
-                                        <div class="dropdown-item is-flex" 
+                                        <div class="dropdown-item is-flex
+                                        {{#if onclick}}
+                                        {{else}}
+                                            is-disable
+                                        {{/if}}
+                                        " 
                                         {{#if onclick}}
                                             onclick="{{onclick}}"
                                         {{/if}}
@@ -84,31 +105,33 @@ id="{{id}}"
                             </div>
                         </div>
                     {{/each}}
-                </div>
-                {{!-- <div class="flex-spacer"></div> --}}
-                {{!-- <div class="navbar-item navbar-search mr-1">
-                <p class="control has-icons-left">
-                    <input class="input is-rounded is-size-6" type="text" placeholder="Search" />
-                    <span class="icon is-small is-left">
-                        <i class="fas fa-search"></i>
-                    </span>
-                </p>
-                </div> --}}
 
-                {{!-- <div class="navbar-item mx-2 px-2">
+                    </div>
+                </div>
+
+                <div class="flex-spacer"></div>
+                
+                <div class="navbar-item navbar-search mr-1">
+                    <p class="control has-icons-left">
+                        <input class="input is-rounded is-size-6" type="text" placeholder="Search" />
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-search"></i>
+                        </span>
+                    </p>
+                </div>
+
+                <div class="navbar-item mx-2 px-2">
                     <div class="dropdown is-right">
-                    <div class="dropdown-trigger">
-                        <div>
+                        <div class="dropdown-trigger">
                             <div
-                                class="button no-border px-0 mr-1 has-background-grey-light is-small"
+                            class="button no-border px-0 mr-1 has-background-grey-light is-small"
                             >
                                 <span class="icon">
                                     <i class="fa fa-lg fa-ellipsis-v"></i>
                                 </span>
                             </div>
                         </div>
-                    </div>
-                    <div class="dropdown-menu is-10rem" id="dropdown-menu" role="menu">
+                        <div class="dropdown-menu is-10rem" id="dropdown-menu" role="menu">
                         <div class="dropdown-content is-rounded-1 is-right is-active">
                             <div class="dropdown-item is-flex">
                                 <span class="icon has-text-grey-light">
@@ -125,9 +148,9 @@ id="{{id}}"
                                     About</span>
                             </div>
                         </div>
+                        </div>
                     </div>
-                    </div>
-                </div> --}}
+                </div>
             </div>
 
         </nav>
@@ -150,7 +173,7 @@ id="{{id}}"
 
         </div>
     </div>
-    {{!-- <footer class="footer mt-3 p-4 is-size-7 has-background-grey-lighter has-shadow">
+    <footer class="footer mt-3 p-4 is-size-7 has-background-grey-lighter has-shadow">
         <div class="content">
             <p>
                 <strong>Smooth transitions</strong> by
@@ -172,5 +195,5 @@ id="{{id}}"
                 </a>.
             </p>
         </div>
-    </footer> --}}
+    </footer>
 </div>

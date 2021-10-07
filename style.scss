@@ -69,6 +69,11 @@
     box-shadow: 0 2px 0 0 #f0f0f0;
 }
 
+.is-disable {
+    pointer-events: none;
+    opacity: 0.65;
+}
+
 .navbar-search {
     flex: 10 1 50vh;
     min-width: 5em;
