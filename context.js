@@ -6,7 +6,7 @@ export default {
             label: "",
             icon: "fas fa-2x fa-home",
         },
-        up: {
+        Xprevious: {
             label: "SectionA",
             icon: "fas fa-2x fa-arrow-down",
             onclick: "stLink('section1', 'down')",

@@ -38,7 +38,7 @@ id="{{id}}"
                     {{/if}}
 
                     {{#if previous}}
-                        <div class="button is-rounded-1"
+                        <div class="button is-rounded"
                             {{#if previous.onclick}}
                                 onclick="{{previous.onclick}}"
                             {{/if}}
@@ -53,17 +53,19 @@ id="{{id}}"
                     {{/if}}
 
                     {{#if next}}
-                        <div class="button is-rounded-1"
+                        <div class="button is-rounded"
                             {{#if next.onclick}}
                                 onclick="{{next.onclick}}"
                             {{/if}}
                         >
+
+                             <span class="is-size-6 mr-3">
+                                {{next.label}}
+                            </span>
                             <span class="icon has-text-grey-light">
                                 <i class="{{next.icon}}"></i>
                             </span>
-                            <span class="is-size-6 ml-2">
-                                {{next.label}}
-                            </span>
+
                         </div>
                     {{/if}}
 
@@ -71,7 +73,7 @@ id="{{id}}"
                         <div class="dropdown mr-1">
                             <div class="dropdown-trigger">
                                 <div>
-                                    <div class="button is-rounded-1">
+                                    <div class="button">
                                         <span class="is-size-6">
                                             {{label}}</span>
                                         <span class="icon is-small">
@@ -158,7 +160,7 @@ id="{{id}}"
             for autohide to work. }}
         <div>
         <div class="container">
-            <div class="card">
+            <div class="card mt-1">
                 <div class="card-header">
                     <div class="card-header-title is-size-5">{{section}}</div>
                     <div class="card-header-title is-size-3">{{title}}</div>
