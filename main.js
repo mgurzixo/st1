@@ -11,31 +11,40 @@ import later from "./lib/Later";
 let template = Handlebars.compile(model);
 
 async function instanciatePage(id) {
+    context[id].id = id;
     let html = template(context[id]);
     document.querySelector("#app").innerHTML = html;
-    makeRandomPage();
-    console.log(2);
+    makeRandomPage(id);
     let navbar = document.querySelector("#myNavbar");
     initAutoHide([navbar]);
-    console.log(3);
-    initBulmaDropdowns();
-    console.log(4);
+    initBulmaDropdowns(id);
 }
 
 function stLink(id, options) {
-    stGoto(() => instanciatePage(id), options);
+    stGoto(() => {
+        instanciatePage(id);
+        return context[id].url;
+    }, options);
+    console.log(`[stLink] res='${context[id].url}'`);
 }
 
 window.stLink = stLink;
-stSetDefaults({ durationMs: 2000, waitMs: 200 });
-document.addEventListener("DOMContentLoaded", function () {
-    console.log(`[instanciatePage] DOMContentLoaded`);
-});
-document.addEventListener("readystatechange", function () {
-    console.log(`[instanciatePage] readystatechange readyState=${document.readyState}`);
-});
-window.onload = function () {
-    console.log(`[main.onload] onload:loaded`);
-};
+stSetDefaults({ durationMs: 400, waitMs: 50 });
+// document.addEventListener("DOMContentLoaded", function () {
+//     console.log(`[instanciatePage] DOMContentLoaded`);
+// });
+// document.addEventListener("readystatechange", function () {
+//     console.log(`[instanciatePage] readystatechange readyState=${document.readyState}`);
+// });
+// window.onload = function () {
+//     console.log(`[main.onload] onload:loaded`);
+// };
 
-instanciatePage("summary");
+let startId = "summary";
+for (let id of Object.keys(context)) {
+    if (context[id].url == window.location.pathname) {
+        startId = id;
+        break;
+    }
+}
+instanciatePage(startId);

@@ -1,6 +1,7 @@
 export default {
     summary: {
         title: "Summary",
+        url: "/",
         burger: {
             label: "",
             icon: "fas fa-2x fa-home",
@@ -33,6 +34,7 @@ export default {
 
     section1: {
         title: "Section 1",
+        url: "/section1",
         burger: {
             label: "Sections",
             icon: "fas fa-2x fa-arrow-up",
