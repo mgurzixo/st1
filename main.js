@@ -29,17 +29,7 @@ function stLink(id, options) {
 }
 
 window.stLink = stLink;
-stSetDefaults({ durationMs: 3000, waitMs: 50 });
-// document.addEventListener("DOMContentLoaded", function () {
-//     console.log(`[instanciatePage] DOMContentLoaded`);
-// });
-// document.addEventListener("readystatechange", function () {
-//     console.log(`[instanciatePage] readystatechange readyState=${document.readyState}`);
-// });
-// window.onload = function () {
-//     console.log(`[main.onload] onload:loaded`);
-// };
-
+stSetDefaults({ durationMs: 500, waitMs: 50 });
 let startId = "summary";
 for (let id of Object.keys(context)) {
     if (context[id].url == window.location.pathname) {

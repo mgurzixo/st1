@@ -5,18 +5,18 @@
         role="navigation"
         aria-label="main navigation"
     >
-        <div class="is-flex is-align-items-center">
+        <div class="is-flex is-align-items-center pb-1">
 
             {{#if burger.onclick}}
                 <div
-                    class="button is-light is-rounded has-background-grey no-border ml-2 px-1 my-1"
+                    class="button is-light is-rounded has-background-grey no-border ml-2 px-2 py-1 my-1"
                     onclick="{{burger.onclick}}"
                 >
                     <div class="fas fa-2x fa-arrow-up"></div>
                 </div>
             {{else}}
                 <div
-                    class="button is-light is-rounded has-background-grey-light no-border ml-2 px-1 my-1 is-static"
+                    class="button is-light is-rounded has-background-grey-light no-border ml-2 px-2 py-1 my-1 is-static"
                 >
                     <div class="fas fa-2x fa-home"></div>
                 </div>
@@ -24,14 +24,14 @@
 
             {{#if previous.onclick}}
                 <div
-                    class="button is-light has-background-grey is-rounded no-border is-small ml-1 px-2"
+                    class="button is-light has-background-grey is-rounded no-border xis-small ml-2 px-2 py-1 my-1"
                     onclick="{{previous.onclick}}"
                 >
                     <div class="fas fa-2x fa-arrow-left"></div>
                 </div>
             {{else}}
                 <div
-                    class="button is-light has-background-grey-light is-rounded no-border is-small ml-1 px-2 is-static"
+                    class="button is-light has-background-grey-light is-rounded no-border xis-small ml-2 px-2 py-1 my-1 is-static"
                 >
                     <div class="fas fa-2x fa-arrow-left"></div>
                 </div>
@@ -39,14 +39,14 @@
 
             {{#if next.onclick}}
                 <div
-                    class="button is-light has-background-grey is-rounded no-border is-small ml-1 px-2"
+                    class="button is-light has-background-grey is-rounded no-border xis-small ml-1 px-2 py-1 my-1"
                     onclick="{{next.onclick}}"
                 >
                     <div class="fas fa-2x fa-arrow-right"></div>
                 </div>
             {{else}}
                 <div
-                    class="button is-light has-background-grey-light is-rounded no-border is-small ml-1 px-2 is-static"
+                    class="button is-light has-background-grey-light is-rounded no-border xis-small ml-1 px-2 py-1 my-1 is-static"
                 >
                     <div class="fas fa-2x fa-arrow-right"></div>
                 </div>
