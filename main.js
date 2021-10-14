@@ -15,8 +15,8 @@ async function instanciatePage(id) {
     let html = template(context[id]);
     document.querySelector("#app").innerHTML = html;
     makeRandomPage(id);
-    let navbar = document.querySelector("#myNavbar");
-    initAutoHide([navbar]);
+    // let navbar = document.querySelector("#myNavbar");
+    initAutoHide("#myNavbar");
     initBulmaDropdowns(id);
 }
 
@@ -29,7 +29,7 @@ function stLink(id, options) {
 }
 
 window.stLink = stLink;
-stSetDefaults({ durationMs: 400, waitMs: 50 });
+stSetDefaults({ durationMs: 3000, waitMs: 50 });
 // document.addEventListener("DOMContentLoaded", function () {
 //     console.log(`[instanciatePage] DOMContentLoaded`);
 // });

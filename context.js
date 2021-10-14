@@ -12,23 +12,28 @@ export default {
             onclick: "stLink('section1', 'down')",
         },
 
-        buttons: [
+        menu: [
             {
                 label: "Sections",
                 items: [
                     {
-                        icon: "fas fa-2x fa-arrow-down",
+                        icon: "fas fa-2x fa-puzzle-piece",
                         label: "Section 1",
                         onclick: "stLink('s1', 'down')",
                     },
                     {
-                        icon: "fas fa-2x fa-arrow-down",
+                        icon: "fas fa-2x fa-puzzle-piece",
                         label: "Section 2",
                         onclick: "stLink('s2', 'down')",
                     },
                 ],
             },
         ],
+        breadcrumbs: {
+            active: {
+                label: "Summary",
+            },
+        },
     },
 
     s1: {
@@ -45,28 +50,37 @@ export default {
             onclick: "stLink('s2', 'right')",
         },
 
-        buttons: [
+        menu: [
             {
                 label: "Chapters",
                 items: [
                     {
-                        icon: "fas fa-2x fa-arrow-down",
+                        icon: "fas fa-align-left",
                         label: "Chapter 1",
                         onclick: "stLink('s1c1', 'down')",
                     },
                     {
-                        icon: "fas fa-2x fa-arrow-down",
+                        icon: "fas fa-align-left",
                         label: "Chapter 2",
                         onclick: "stLink('s1c2', 'down')",
                     },
                     {
-                        icon: "fas fa-2x fa-arrow-down",
+                        icon: "fas fa-align-left",
                         label: "Chapter 3",
                         onclick: "stLink('s1c3', 'down')",
                     },
                 ],
             },
         ],
+        breadcrumbs: {
+            summary: {
+                label: "Summary",
+                onclick: "stLink('summary', 'up')",
+            },
+            active: {
+                label: "Section 1",
+            },
+        },
     },
 
     s2: {
@@ -83,23 +97,32 @@ export default {
             onclick: "stLink('s1', 'left')",
         },
 
-        buttons: [
+        menu: [
             {
                 label: "Chapters",
                 items: [
                     {
-                        icon: "fas fa-2x fa-arrow-down",
+                        icon: "fas fa-2x fa-align-left",
                         label: "Chapter 1",
                         onclick: "stLink('s2c1', 'down')",
                     },
                     {
-                        icon: "fas fa-2x fa-arrow-down",
+                        icon: "fas fa-2x fa-align-left",
                         label: "Chapter 2",
                         onclick: "stLink('s2c2', 'down')",
                     },
                 ],
             },
         ],
+        breadcrumbs: {
+            summary: {
+                label: "Summary",
+                onclick: "stLink('summary', 'up')",
+            },
+            active: {
+                label: "Section 2",
+            },
+        },
     },
 
     s1c1: {
@@ -115,27 +138,40 @@ export default {
             icon: "fas fa-2x fa-arrow-right",
             onclick: "stLink('s1c2', 'right')",
         },
-        buttons: [
+        menu: [
             {
                 label: "Chapters",
                 items: [
                     {
-                        icon: "fas fa-2x fa-times",
+                        icon: "fas fa-2x fa-align-left",
                         label: "Chapter 1",
                     },
                     {
-                        icon: "fas fa-2x fa-arrow-right",
+                        icon: "fas fa-2x fa-align-left",
                         label: "Chapter 2",
                         onclick: "stLink('s1c2', 'right')",
                     },
                     {
-                        icon: "fas fa-2x fa-arrow-right",
+                        icon: "fas fa-2x fa-align-left",
                         label: "Chapter 3",
                         onclick: "stLink('s1c3', 'right')",
                     },
                 ],
             },
         ],
+        breadcrumbs: {
+            summary: {
+                label: "Summary",
+                onclick: "stLink('summary', 'up')",
+            },
+            level1: {
+                label: "Section 1",
+                onclick: "stLink('s1', 'up')",
+            },
+            active: {
+                label: "Chapter 1",
+            },
+        },
     },
 
     s1c2: {
@@ -156,12 +192,12 @@ export default {
             icon: "fas fa-2x fa-arrow-right",
             onclick: "stLink('s1c3', 'right')",
         },
-        buttons: [
+        menu: [
             {
                 label: "Chapters",
                 items: [
                     {
-                        icon: "fas fa-2x fa-arrow-left",
+                        icon: "fas fa-2x fa-align-left",
                         label: "Chapter 1",
                         onclick: "stLink('s1c1', 'left')",
                     },
@@ -170,13 +206,26 @@ export default {
                         label: "Chapter 2",
                     },
                     {
-                        icon: "fas fa-2x fa-arrow-right",
+                        icon: "fas fa-2x fa-align-left",
                         label: "Chapter 3",
                         onclick: "stLink('s1c3', 'right')",
                     },
                 ],
             },
         ],
+        breadcrumbs: {
+            summary: {
+                label: "Summary",
+                onclick: "stLink('summary', 'up')",
+            },
+            level1: {
+                label: "Section 1",
+                onclick: "stLink('s1', 'up')",
+            },
+            active: {
+                label: "Chapter 2",
+            },
+        },
     },
 
     s1c3: {
@@ -192,17 +241,17 @@ export default {
             icon: "fas fa-2x fa-arrow-left",
             onclick: "stLink('s1c2', 'left')",
         },
-        buttons: [
+        menu: [
             {
                 label: "Chapters",
                 items: [
                     {
-                        icon: "fas fa-2x fa-arrow-left",
+                        icon: "fas fa-2x fa-align-left",
                         label: "Chapter 1",
                         onclick: "stLink('s1c1', 'left')",
                     },
                     {
-                        icon: "fas fa-2x fa-arrow-left",
+                        icon: "fas fa-2x fa-align-left",
                         label: "Chapter 2",
                         onclick: "stLink('s1c2', 'left')",
                     },
@@ -213,6 +262,19 @@ export default {
                 ],
             },
         ],
+        breadcrumbs: {
+            summary: {
+                label: "Summary",
+                onclick: "stLink('summary', 'up')",
+            },
+            level1: {
+                label: "Section 1",
+                onclick: "stLink('s1', 'up')",
+            },
+            active: {
+                label: "Chapter 3",
+            },
+        },
     },
 
     s2c1: {
@@ -228,7 +290,7 @@ export default {
             icon: "fas fa-2x fa-arrow-right",
             onclick: "stLink('s2c2', 'right')",
         },
-        buttons: [
+        menu: [
             {
                 label: "Chapters",
                 items: [
@@ -237,13 +299,26 @@ export default {
                         label: "Chapter 1",
                     },
                     {
-                        icon: "fas fa-2x fa-arrow-right",
+                        icon: "fas fa-2x fa-align-left",
                         label: "Chapter 2",
                         onclick: "stLink('s2c2', 'right')",
                     },
                 ],
             },
         ],
+        breadcrumbs: {
+            summary: {
+                label: "Summary",
+                onclick: "stLink('summary', 'up')",
+            },
+            level1: {
+                label: "Section 2",
+                onclick: "stLink('s2', 'up')",
+            },
+            active: {
+                label: "Chapter 1",
+            },
+        },
     },
 
     s2c2: {
@@ -259,12 +334,12 @@ export default {
             icon: "fas fa-2x fa-arrow-left",
             onclick: "stLink('s2c1', 'left')",
         },
-        buttons: [
+        menu: [
             {
                 label: "Chapters",
                 items: [
                     {
-                        icon: "fas fa-2x fa-arrow-left",
+                        icon: "fas fa-2x fa-align-left",
                         label: "Chapter 1",
                         onclick: "stLink('s2c1', 'left')",
                     },
@@ -275,5 +350,18 @@ export default {
                 ],
             },
         ],
+        breadcrumbs: {
+            summary: {
+                label: "Summary",
+                onclick: "stLink('summary', 'up')",
+            },
+            level1: {
+                label: "Section 2",
+                onclick: "stLink('s2', 'up')",
+            },
+            active: {
+                label: "Chapter 2",
+            },
+        },
     },
 };

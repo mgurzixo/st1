@@ -1,201 +1,184 @@
-<div class="page-container"
-id="{{id}}"
->
-    <div class="content-wrap">
-        <nav
-        class="st-navbar has-background-grey-light py-0 my-0"
-        id="myNavbar"
+<div class="st-navbar" id="myNavbar">
+    <nav
+        id={{id}}
+        class="is-flex is-align-items-center is-flex-wrap-nowrap is-justify-content-space-between has-background-grey-light py-0 my-0"
         role="navigation"
         aria-label="main navigation"
-        >
-            <div class="navbar-brand is-size-7">
-                <div class="navbar-item px-0">
-                    <div class="buttons">
+    >
+        <div class="is-flex is-align-items-center">
 
-                    {{#if burger}}
-                        <div
-                        class="button is-light 
-                        {{#if burger.onclick}}
-                        {{else}}
-                            is-static
-                        {{/if}}
-                        has-background-grey-light no-border is-small ml-2"
-                        {{#if burger.onclick}}
-                            onclick="{{burger.onclick}}"
-                        {{/if}}
-                        >
-                            <span class="icon ">
-                                <i class="{{burger.icon}}"></i>
-                            </span>
-
-                            {{#if burger.label}}
-                                <span class="is-size-6 ml-2">
-                                    {{burger.label}}
-                                </span>
-                            {{/if}}
-                            
-                        </div>
-                    {{/if}}
-
-                    {{#if previous}}
-                        <div class="button is-rounded"
-                            {{#if previous.onclick}}
-                                onclick="{{previous.onclick}}"
-                            {{/if}}
-                        >
-                            <span class="icon has-text-grey-light">
-                                <i class="{{previous.icon}}"></i>
-                            </span>
-                            <span class="is-size-6 ml-2">
-                                {{previous.label}}
-                            </span>
-                        </div>
-                    {{/if}}
-
-                    {{#if next}}
-                        <div class="button is-rounded"
-                            {{#if next.onclick}}
-                                onclick="{{next.onclick}}"
-                            {{/if}}
-                        >
-
-                             <span class="is-size-6 mr-3">
-                                {{next.label}}
-                            </span>
-                            <span class="icon has-text-grey-light">
-                                <i class="{{next.icon}}"></i>
-                            </span>
-
-                        </div>
-                    {{/if}}
-
-                    {{#each buttons}}
-                        <div class="dropdown mr-1">
-                            <div class="dropdown-trigger">
-                                <div>
-                                    <div class="button">
-                                        <span class="is-size-6">
-                                            {{label}}</span>
-                                        <span class="icon is-small">
-                                            <i class="fas fa-angle-down"></i>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="dropdown-menu" id="dropdown-menu" role="menu">
-                                <div class="dropdown-content is-rounded-1">
-                                    {{#each items}}
-                                        <div class="dropdown-item is-flex
-                                        {{#if onclick}}
-                                        {{else}}
-                                            is-disable
-                                        {{/if}}
-                                        " 
-                                        {{#if onclick}}
-                                            onclick="{{onclick}}"
-                                        {{/if}}
-                                        >
-                                            <span class="icon has-text-grey-light">
-                                                <i class="fa-lg {{icon}}"></i>
-                                            </span>
-                                            <span class="is-size-6 ml-2">
-                                                {{label}}
-                                            </span>
-                                        </div>
-                                    {{/each}}
-                                </div>
-                            </div>
-                        </div>
-                    {{/each}}
-
-                    </div>
-                </div>
-
-                <div class="flex-spacer"></div>
-                
-                <div class="navbar-item navbar-search mr-1">
-                    <p class="control has-icons-left">
-                        <input class="input is-rounded is-size-6" type="text" placeholder="Search" />
-                        <span class="icon is-small is-left">
-                            <i class="fas fa-search"></i>
-                        </span>
-                    </p>
-                </div>
-
-                <div class="navbar-item mx-2 px-2">
-                    <div class="dropdown is-right">
-                        <div class="dropdown-trigger">
-                            <div
-                            class="button no-border px-0 mr-1 has-background-grey-light is-small"
-                            >
-                                <span class="icon">
-                                    <i class="fa fa-lg fa-ellipsis-v"></i>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="dropdown-menu is-10rem" id="dropdown-menu" role="menu">
-                        <div class="dropdown-content is-rounded-1 is-right is-active">
-                            <div class="dropdown-item is-flex">
-                                <span class="icon has-text-grey-light">
-                                    <i class="fa-lg fa fa-cog"></i>
-                                </span>
-                                <span class="is-size-6 ml-1">
-                                    Settings</span>
-                            </div>
-                            <div class="dropdown-item is-flex">
-                                <span class="icon has-text-grey-light">
-                                    <i class="fa-lg fa fa-heart"></i>
-                                </span>
-                                <span class="is-size-6 ml-1">
-                                    About</span>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </nav>
-        {{! This empty div MUST be the first element after st-navbar
-            for autohide to work. }}
-        <div>
-        <div class="container">
-            <div class="card mt-1">
-                <div class="card-header">
-                    <div class="card-header-title is-size-5">{{section}}</div>
-                    <div class="card-header-title is-size-3">{{title}}</div>
-                </div>
-                <div class="card-content is-clearfix has-text-left random-bloc">
-                </div>
-            </div>
-        </div>
-
-
-
-
-        </div>
-    </div>
-    <footer class="footer mt-3 p-4 is-size-7 has-background-grey-lighter has-shadow">
-        <div class="content">
-            <p>
-                <strong>Smooth transitions</strong> by
-                <a href="https://none.com">XXXX Mgurzixo</a>.
-                <br />
-                The source code is available at
-                <a href="http://opensource.org/licenses/mit-license.php" target="_blank"
-                    >XXXX Github</a
+            {{#if burger.onclick}}
+                <div
+                    class="button is-light is-rounded has-background-grey no-border ml-2 px-1 my-1"
+                    onclick="{{burger.onclick}}"
                 >
-                under the
-                <a href="http://opensource.org/licenses/mit-license.php" target="_blank"
-                    >MIT</a
-                        >
-                licence.
-                <br />
-                The website content is licensed
-                <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">
-                    CC BY NC SA 4.0
-                </a>.
+                    <div class="fas fa-2x fa-arrow-up"></div>
+                </div>
+            {{else}}
+                <div
+                    class="button is-light is-rounded has-background-grey-light no-border ml-2 px-1 my-1 is-static"
+                >
+                    <div class="fas fa-2x fa-home"></div>
+                </div>
+            {{/if}}
+
+            {{#if previous.onclick}}
+                <div
+                    class="button is-light has-background-grey is-rounded no-border is-small ml-1 px-2"
+                    onclick="{{previous.onclick}}"
+                >
+                    <div class="fas fa-2x fa-arrow-left"></div>
+                </div>
+            {{else}}
+                <div
+                    class="button is-light has-background-grey-light is-rounded no-border is-small ml-1 px-2 is-static"
+                >
+                    <div class="fas fa-2x fa-arrow-left"></div>
+                </div>
+            {{/if}}
+
+            {{#if next.onclick}}
+                <div
+                    class="button is-light has-background-grey is-rounded no-border is-small ml-1 px-2"
+                    onclick="{{next.onclick}}"
+                >
+                    <div class="fas fa-2x fa-arrow-right"></div>
+                </div>
+            {{else}}
+                <div
+                    class="button is-light has-background-grey-light is-rounded no-border is-small ml-1 px-2 is-static"
+                >
+                    <div class="fas fa-2x fa-arrow-right"></div>
+                </div>
+            {{/if}}
+
+        </div>
+
+        {{#each menu}}
+            <div class="dropdown ml-1">
+                <div class="dropdown-trigger m-0">
+                    <div class="button is-rounded-1">
+                        <span class="is-size-6">
+                            {{label}}</span>
+                        <span class="icon is-small">
+                            <i class="fas fa-angle-down"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                    <div class="dropdown-content is-rounded-1">
+                        {{#each items}}
+
+                            {{#if onclick}}
+                                <div class="dropdown-item" onclick="{{onclick}}">
+                                    <span class="icon has-text-grey-light">
+                                        <i class="fa-lg {{icon}}"></i>
+                                    </span>
+                                    <span class="is-size-6 ml-2">
+                                        {{label}}
+                                    </span>
+                                </div>
+                            {{else}}
+                                <div class="dropdown-item is-disable">
+                                    <span class="icon has-text-grey-light">
+                                        <i class="fa-lg {{icon}}"></i>
+                                    </span>
+                                    <span class="is-size-6 ml-2">
+                                        {{label}}
+                                    </span>
+                                </div>
+                            {{/if}}
+
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+        {{/each}}
+
+        <div class="flex-grow-5 flex-shrink-5"></div>
+
+        <div class="navbar-search ml-1 flex-shrink-3">
+            <p class="control has-icons-left">
+                <input class="input is-rounded is-size-6" type="text" placeholder="Search" />
+                <span class="icon is-small is-left">
+                    <i class="fas fa-search"></i>
+                </span>
             </p>
         </div>
-    </footer>
+
+        <div class="dropdown is-right ml-2 mr-1">
+            <div class="dropdown-trigger">
+                <div class="button no-border px-0 mr-1 has-background-grey-light is-small">
+                    <span class="icon">
+                        <i class="fa fa-lg fa-ellipsis-v"></i>
+                    </span>
+                </div>
+            </div>
+            <div class="dropdown-menu is-10rem" id="dropdown-menu" role="menu">
+                <div class="dropdown-content is-rounded-1 is-right is-active">
+                    <div class="dropdown-item is-flex">
+                        <span class="icon has-text-grey-light">
+                            <i class="fa-lg fa fa-cog"></i>
+                        </span>
+                        <span class="is-size-6 ml-1">
+                            Settings</span>
+                    </div>
+                    <div class="dropdown-item is-flex">
+                        <span class="icon has-text-grey-light">
+                            <i class="fa-lg fa fa-heart"></i>
+                        </span>
+                        <span class="is-size-6 ml-1">
+                            About</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </nav>
+
+    <nav
+        class="breadcrumb has-background-grey-light is-full-width pb-1 my-0"
+        aria-label="breadcrumbs"
+    >
+        {{#if breadcrumbs}}
+            <ul class="is-size-6 has-background-white mx-1 px-2 is-rounded-1">
+                {{#if breadcrumbs.summary}}
+                    <li onclick="{{breadcrumbs.summary.onclick}}"><a
+                            href="#"
+                        >{{breadcrumbs.summary.label}}</a></li>
+                {{/if}}
+                {{#if breadcrumbs.level1}}
+                    <li onclick="{{breadcrumbs.level1.onclick}}"><a
+                            href="#"
+                        >{{breadcrumbs.level1.label}}</a></li>
+
+                {{/if}}
+                {{#if breadcrumbs.active}}
+                    <li class="is-active"><a
+                            href="#"
+                            aria-current="page"
+                        >{{breadcrumbs.active.label}}</a></li>
+                {{/if}}
+            </ul>
+        {{/if}}
+    </nav>
 </div>
+<div id="emptyDiv"></div>
+{{! This empty div MUST be the first element after st-navbar
+            for autohide to work. }}
+<div>
+    <div class="container">
+
+        <div class="card mt-1" id={{id}}>
+            <div class="card-header">
+                <div class="card-header-title is-size-5">{{section}}</div>
+                <div class="card-header-title is-size-3">{{title}}</div>
+            </div>
+            <div class="card-content is-clearfix has-text-left random-bloc">
+            </div>
+        </div>
+    </div>
+
+</div>
+<!--<  <div xx="yyy"></div> -->
+<div a="b" ___="yyy"></div>

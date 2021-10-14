@@ -80,15 +80,15 @@
     max-width: 20em;
 }
 
-.flex-spacer {
-    flex: 1 1;
-}
-
 .no-border {
     border-width: 0px;
 }
 
+.is-full-width {
+    width: 100%;
+}
+
 // Dropdowns style
-.button.is-rounded-1:not(.is-rounded) {
+.is-rounded-1:not(.is-rounded) {
     border-radius: 0.8em;
 }
